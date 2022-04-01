@@ -127,6 +127,10 @@
     "\u001b[1;2B":     "SelectDown", //shift + down
     "\u001b[1;2D":     "SelectLeft",  //shift + left
     "\u001b[1;2C":     "SelectRight",  //shift + right
+
+    "\u001b[H": "StartOfText",   //fn + left
+    "\u001b[F": "EndOfLine",   //fn + right  
+
     
     "Alt-[": "JumpToMatchingBrace",
     "Alt-]": "JumpToMatchingBrace",
