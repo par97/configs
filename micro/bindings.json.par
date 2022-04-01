@@ -1,0 +1,135 @@
+{   
+    "Up":             "CursorUp",
+    "Down":           "CursorDown",
+    "Right":          "CursorRight",
+    "Left":           "CursorLeft",
+    "ShiftUp":        "SelectUp",
+    "ShiftDown":      "SelectDown",
+    "ShiftLeft":      "SelectLeft",
+    "ShiftRight":     "SelectRight",
+    "AltLeft":        "WordLeft", 
+    "AltRight":       "WordRight", 
+    "AltUp":          "MoveLinesUp",
+    "AltDown":        "MoveLinesDown",
+    "AltShiftRight":  "SelectWordRight", 
+    "AltShiftLeft":   "SelectWordLeft", 
+    "CtrlLeft":       "StartOfText", 
+    "CtrlRight":      "EndOfLine", 
+    "CtrlShiftLeft":  "SelectToStartOfTextToggle",
+    "ShiftHome":      "SelectToStartOfTextToggle",
+    "CtrlShiftRight": "SelectToEndOfLine",
+    "ShiftEnd":       "SelectToEndOfLine",
+    "CtrlUp":         "CursorStart",
+    "CtrlDown":       "CursorEnd",
+    "CtrlShiftUp":    "SelectToStart",
+    "CtrlShiftDown":  "SelectToEnd",
+    "Alt-{":          "ParagraphPrevious",
+    "Alt-}":          "ParagraphNext",
+    "Enter":          "InsertNewline",
+    "Ctrl-h":          "Backspace",
+    "Backspace":      "Backspace",
+    "Alt-CtrlH":      "DeleteWordLeft",
+    "Alt-Backspace":  "DeleteWordLeft",
+    "Tab":            "Autocomplete|IndentSelection|InsertTab",
+    "Backtab":        "OutdentSelection|OutdentLine",
+    "Ctrl-o":          "OpenFile",
+    "Ctrl-s":          "Save",
+    "Ctrl-f":          "Find",
+    "Ctrl-n":          "FindNext",
+    "Ctrl-p":          "FindPrevious",
+    "Ctrl-z":          "Undo",
+    "Ctrl-y":          "Redo",
+    "Ctrl-c":          "CopyLine|Copy",
+    "Ctrl-x":          "Cut",
+    "Ctrl-k":          "CutLine",
+    "Ctrl-d":          "DuplicateLine",
+    "Ctrl-v":          "Paste",
+    "Ctrl-a":          "SelectAll",
+    "Ctrl-t":          "AddTab",
+    "Alt-,":           "PreviousTab",
+    "Alt-.":           "NextTab",
+    "Home":           "StartOfText",
+    "End":            "EndOfLine",
+    "CtrlHome":       "CursorStart",
+    "CtrlEnd":        "CursorEnd",
+    "PageUp":         "CursorPageUp",
+    "PageDown":       "CursorPageDown",
+    "CtrlPageUp":     "PreviousTab",
+    "CtrlPageDown":   "NextTab",
+    "Ctrl-g":          "ToggleHelp",
+    "Alt-g":          "ToggleKeyMenu",
+    "Ctrl-r":          "ToggleRuler",
+    "Ctrl-l":          "command-edit:goto ",
+    "Delete":         "Delete",
+    "Ctrl-b":          "ShellMode",
+    "Ctrl-q":          "Quit",
+    "Ctrl-e":          "CommandMode",
+    "Ctrl-w":          "NextSplit",
+    "Ctrl-u":          "ToggleMacro",
+    "Ctrl-j":          "PlayMacro",
+    "Insert":         "ToggleOverwriteMode",
+
+    // Emacs-style keybindings
+    "Alt-f": "WordRight",
+    "Alt-b": "WordLeft",
+    "Alt-a": "StartOfLine",
+    "Alt-e": "EndOfLine",
+
+    // Integration with file managers
+    "F2":  "Save",
+    "F3":  "Find",
+    "F4":  "Quit",
+    "F7":  "Find",
+    "F10": "Quit",
+    "Esc": "Escape",
+
+    // Mouse bindings
+    "MouseWheelUp":   "ScrollUp",
+    "MouseWheelDown": "ScrollDown",
+    "MouseLeft":      "MousePress",
+    "MouseMiddle":    "PastePrimary",
+    "Ctrl-MouseLeft": "MouseMultiCursor",
+
+    "Alt-n":        "SpawnMultiCursor",
+    "AltShiftUp":   "SpawnMultiCursorUp",
+    "AltShiftDown": "SpawnMultiCursorDown",
+    "Alt-m":        "SpawnMultiCursorSelect",
+    "Alt-p":        "RemoveMultiCursor",
+    "Alt-c":        "RemoveAllMultiCursors",
+    "Alt-x":        "SkipMultiCursor",
+
+    // par
+    "\u001b[1;9A": "None",   //option + up
+    "\u001b[1;9B": "None", //option + down  
+
+    "\u001b[1;9D": "WordLeft",      //option + left
+    "\u001b[1;9C": "WordRight",     //option + right 
+    
+    "\u001b[1;10D": "SelectWordLeft", //option shift left  
+    "\u001b[1;10C": "SelectWordRight",   //option shift right
+
+    "\u001b[1;10A": "SelectUp", //option shift up  
+    "\u001b[1;10B": "SelectDown",   //option shift down
+
+    "\u001b[1;5D": "StartOfText",   //ctrl + left
+    "\u001b[1;5C": "EndOfLine",     //ctrl + right  
+
+    "\u001b[1;6D":   "SelectToStartOfTextToggle",  // ctrl shift left
+    "\u001b[1;6C":   "SelectToEndOfLine", //ctrl shift right
+
+    "\u001b[1;5A": "None",   //ctrl + up
+    "\u001b[1;5B": "None",     //ctrl + down  
+
+    "\u001b[1;6A":   "SelectUp",  // ctrl shift up
+    "\u001b[1;6B":   "SelectDown", //ctrl shift down
+
+    "\u001b[1;2A":     "SelectUp",  //shift + up
+    "\u001b[1;2B":     "SelectDown", //shift + down
+    "\u001b[1;2D":     "SelectLeft",  //shift + left
+    "\u001b[1;2C":     "SelectRight",  //shift + right
+    
+    "Alt-[": "JumpToMatchingBrace",
+    "Alt-]": "JumpToMatchingBrace",
+    "Alt-k": "DeleteLine"
+    
+}
