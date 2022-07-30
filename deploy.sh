@@ -14,6 +14,7 @@ fi
 if ! [ -f ~/.oh-my-zsh/oh-my-zsh.sh ]; then
     echo "Error: oh-my-zsh is not installed, please install it first"
     echo 'Tip: oh-my-zsh could be installed by: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+    exit
 fi 
 
 echo ""
