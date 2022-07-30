@@ -1,0 +1,18 @@
+#
+# beginning of my customized zshrc
+#
+ZSH_THEME="par"
+plugins=(git kubectl-par sudo yaml-out wcat themes history oc colorize extract zsh-autosuggestions zsh-syntax-highlighting )
+source $ZSH/oh-my-zsh.sh
+
+alias c='column -t'
+alias gv='grep -E -v "^#|^$"'
+alias gvc='grep -E -v "^#|^$" | ccat'
+alias xcat='xargs cat'
+
+bindkey "^J" backward-kill-line
+bindkey "^]" redo
+
+#export GOPRIVATE="github.ibm.com/*"
+#export GITHUB_TOKEN=xxxxxx
+export LC_ALL="en_US.UTF-8"
