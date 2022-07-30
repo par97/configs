@@ -1,6 +1,7 @@
 #
 # beginning of my customized zshrc
 #
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="par"
 plugins=(git kubectl-par sudo yaml-out wcat themes history oc colorize extract zsh-autosuggestions zsh-syntax-highlighting )
 source $ZSH/oh-my-zsh.sh
