@@ -12,12 +12,12 @@ if ! [ -f "$(which zsh)" ]; then
 fi 
 
 if ! [ -f ~/.oh-my-zsh/oh-my-zsh.sh ]; then
-    echo "oh-my-zsh is not installed, install it now"
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    echo "Error: oh-my-zsh is not installed, please install it first"
+    echo 'Tip: oh-my-zsh could be installed by: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
 fi 
 
 echo ""
-echo -n "start to install? [y/N]: "
+echo -n "Preinstall check is done, start to install? [y/N]: "
 read -r input
 if [[ $input != "y" ]]; then
     echo "exit"
