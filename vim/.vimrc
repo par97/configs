@@ -10,7 +10,7 @@ set showcmd
 set wrap
 syntax on
 
-set cursorline  "cul
+set cursorline "cul
 set cursorcolumn "cuc
 
 set hlsearch
@@ -52,6 +52,9 @@ map Q q
 map , @@
 
 colo codedark
+
 set mouse=a
+"set mouse=
+
 set clipboard=unnamed
 set wildmenu
