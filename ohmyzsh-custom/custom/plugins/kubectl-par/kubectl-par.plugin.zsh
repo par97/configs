@@ -1,20 +1,22 @@
+# modified by par
+
 if (( $+commands[kubectl] )); then
-    __KUBECTL_COMPLETION_FILE="${ZSH_CACHE_DIR}/kubectl_completion"
-
-    if [[ ! -f $__KUBECTL_COMPLETION_FILE || ! -s $__KUBECTL_COMPLETION_FILE ]]; then
-        kubectl completion zsh >! $__KUBECTL_COMPLETION_FILE
+    # If the completion file does not exist, generate it and then source it
+    # Otherwise, source it and regenerate in the background
+    if [[ ! -f "$ZSH_CACHE_DIR/completions/_kubectl" ]]; then
+        kubectl completion zsh | tee "$ZSH_CACHE_DIR/completions/_kubectl" >/dev/null
+        source "$ZSH_CACHE_DIR/completions/_kubectl"
+    else
+        source "$ZSH_CACHE_DIR/completions/_kubectl"
+        kubectl completion zsh | tee "$ZSH_CACHE_DIR/completions/_kubectl" >/dev/null &|
     fi
-
-    [[ -f $__KUBECTL_COMPLETION_FILE ]] && source $__KUBECTL_COMPLETION_FILE
-
-    unset __KUBECTL_COMPLETION_FILE
 fi
 
 # This command is used a LOT both below and in daily life
 alias k=kubectl
 
 # Execute a kubectl command against all namespaces
-# alias kca='_kca(){ kubectl "$@" --all-namespaces;  unset -f _kca; }; _kca'
+alias ka='_kca(){ kubectl "$@" --all-namespaces;  unset -f _kca; }; _kca'
 
 # Apply a YML file
 alias kaf='kubectl apply -f'
@@ -25,8 +27,8 @@ alias keit='kubectl exec -it'
 
 # Manage configuration quickly to switch contexts between local, dev ad staging.
 alias kcuc='kubectl config use-context'
-# alias kcsc='kubectl config set-context'
-# alias kcdc='kubectl config delete-context'
+alias kcsc='kubectl config set-context'
+alias kcdc='kubectl config delete-context'
 alias kccc='kubectl config current-context'
 
 # List all contexts
@@ -40,7 +42,6 @@ alias kdelf='kubectl delete -f'
 alias kd='kubectl describe'
 alias kg='kubectl get'
 alias ke='kubectl edit'
-alias kr='kubectl delete'
 alias kx='kubectl explain'
 alias kxr='kubectl explain --recursive'
 
@@ -64,11 +65,11 @@ alias kdelp='kubectl delete pods'
 #alias kgpl='kgp -l'
 
 # get pod by namespace: kgpn kube-system"
-#alias kgpn='kgp -n'
+alias kgpn='kgp -n'
 
 # Service management.
 alias kgs='kubectl get svc'
-alias kgsa='kubectl get svc --all-namespaces'
+#alias kgsa='kubectl get svc --all-namespaces'
 alias kgsw='kgs --watch'
 alias kgswide='kgs -o wide'
 alias kes='kubectl edit svc'
@@ -114,27 +115,30 @@ alias kgdwide='kgd -o wide'
 alias ked='kubectl edit deployment'
 alias kdd='kubectl describe deployment'
 alias kdeld='kubectl delete deployment'
-# alias ksd='kubectl scale deployment'
-# alias krsd='kubectl rollout status deployment'
-kres(){
+alias ksd='kubectl scale deployment'
+alias krsd='kubectl rollout status deployment'
+
+function kres(){
     kubectl set env $@ REFRESHED_AT=$(date +%Y%m%d%H%M%S)
 }
 
 # Rollout management.
-# alias kgrs='kubectl get rs'
+# alias kgrs='kubectl get replicaset'
+# alias kdrs='kubectl describe replicaset'
+# alias kers='kubectl edit replicaset'
 # alias krh='kubectl rollout history'
 # alias kru='kubectl rollout undo'
 
 # Statefulset management.
 alias kgss='kubectl get statefulset'
 alias kgssa='kubectl get statefulset --all-namespaces'
-# alias kgssw='kgss --watch'
+alias kgssw='kgss --watch'
 alias kgsswide='kgss -o wide'
 alias kess='kubectl edit statefulset'
 alias kdss='kubectl describe statefulset'
 alias kdelss='kubectl delete statefulset'
-# alias ksss='kubectl scale statefulset'
-# alias krsss='kubectl rollout status statefulset'
+alias ksss='kubectl scale statefulset'
+alias krsss='kubectl rollout status statefulset'
 
 # Port forwarding
 alias kpf="kubectl port-forward"
@@ -147,14 +151,14 @@ alias kgaa='kubectl get all --all-namespaces'
 alias kl='kubectl logs'
 alias kl1h='kubectl logs --since 1h'
 alias kl1m='kubectl logs --since 1m'
-# alias kl1s='kubectl logs --since 1s'
+alias kl1s='kubectl logs --since 1s'
 alias klf='kubectl logs -f'
 alias klf1h='kubectl logs --since 1h -f'
 alias klf1m='kubectl logs --since 1m -f'
 alias klf1s='kubectl logs --since 1s -f'
 
 # File copy
-# alias kcp='kubectl cp'
+alias kcp='kubectl cp'
 
 # Node Management
 alias kgno='kubectl get nodes'
@@ -164,24 +168,35 @@ alias kgno='kubectl get nodes'
 
 # PVC management.
 alias kgpvc='kubectl get pvc'
-# alias kgpvca='kubectl get pvc --all-namespaces'
-# alias kgpvcw='kgpvc --watch'
-# alias kepvc='kubectl edit pvc'
-# alias kdpvc='kubectl describe pvc'
-# alias kdelpvc='kubectl delete pvc'
+alias kgpvca='kubectl get pvc --all-namespaces'
+alias kgpvcw='kgpvc --watch'
+alias kepvc='kubectl edit pvc'
+alias kdpvc='kubectl describe pvc'
+alias kdelpvc='kubectl delete pvc'
 
 # Service account management.
-# alias kdsa="kubectl describe sa"
-# alias kdelsa="kubectl delete sa"
+alias kgsa="kubectl get sa"
+alias kdsa="kubectl describe sa"
+alias kdelsa="kubectl delete sa"
 
 # DaemonSet management.
-# alias kgds='kubectl get daemonset'
-# alias kgdsw='kgds --watch'
-# alias keds='kubectl edit daemonset'
-# alias kdds='kubectl describe daemonset'
-# alias kdelds='kubectl delete daemonset'
+alias kgds='kubectl get daemonset'
+alias kgdsw='kgds --watch'
+alias keds='kubectl edit daemonset'
+alias kdds='kubectl describe daemonset'
+alias kdelds='kubectl delete daemonset'
 
 # CronJob management.
+alias kgcj='kubectl get cronjob'
+alias kecj='kubectl edit cronjob'
+alias kdcj='kubectl describe cronjob'
+alias kdelcj='kubectl delete cronjob'
+
+# Job management.
+alias kgj='kubectl get job'
+alias kej='kubectl edit job'
+alias kdj='kubectl describe job'
+alias kdelj='kubectl delete job'
 
 # Only run if the user actually has kubectl installed
 # if (( ${+_comps[kubectl]} )); then
