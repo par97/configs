@@ -34,6 +34,12 @@ alias kccc='kubectl config current-context'
 # List all contexts
 alias kcgc='kubectl config get-contexts'
 
+# rename current context
+kcrc(){
+    current_context=$(kubectl config current-context)
+    k config rename-context $current_context $*
+}
+
 # General aliases
 
 alias kdel='kubectl delete'
