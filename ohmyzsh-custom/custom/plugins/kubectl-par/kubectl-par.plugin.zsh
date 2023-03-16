@@ -40,6 +40,9 @@ kcrc(){
     k config rename-context $current_context $*
 }
 
+# use a context
+alias kc='kubectl --context'
+
 # General aliases
 
 alias kdel='kubectl delete'
