@@ -1,4 +1,6 @@
 set nocompatible
+"set nocp
+
 set number  
 "set nu
 "set rnu
