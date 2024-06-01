@@ -32,17 +32,17 @@ map <C-W> <S-Right>
 map <C-A> <Home>
 map <C-E> <End>
 
-map <C-J> <Left>
-map <C-L> <Right>
+"map <C-J> <Left>
+"map <C-L> <Right>
 
-map <C-I> <UP>
-map <C-K> <Down>
+"map <C-I> <UP>
+"map <C-K> <Down>
 
-map! <C-I> <UP>
-map! <C-K> <Down>
+"map! <C-I> <UP>
+"map! <C-K> <Down>
 
-map! <C-J> <Left>
-map! <C-L> <Right>
+"map! <C-J> <Left>
+"map! <C-L> <Right>
 
 map! <C-Q> <S-Left>
 map! <C-W> <S-Right>
