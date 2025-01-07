@@ -8,3 +8,7 @@
 4. zsh
 
 ####Run `./deploy.sh`.
+
+## config for nvim + lazyvim 
+
+this setting needs manual update
