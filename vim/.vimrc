@@ -26,32 +26,22 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 set pastetoggle=<F9>
 
-map <C-Q> <S-Left>
-map <C-W> <S-Right>
-
-map <C-A> <Home>
-map <C-E> <End>
-
-"map <C-J> <Left>
-"map <C-L> <Right>
-
-"map <C-I> <UP>
-"map <C-K> <Down>
-
-"map! <C-I> <UP>
-"map! <C-K> <Down>
-
-"map! <C-J> <Left>
-"map! <C-L> <Right>
-
 map! <C-Q> <S-Left>
+map  <C-Q> <S-Left>
 map! <C-W> <S-Right>
+map  <C-W> <S-Right>
 
 map! <C-A> <Home>
+map  <C-A> <Home>
 map! <C-E> <End>
+map  <C-E> <End>
 
-map Q q
-map , @@
+
+nnoremap <space>qw :w<cr>
+nnoremap <space>qe :wq<cr>
+nnoremap <space>qq :q<cr>
+nnoremap <space>qa :qa<cr>
+nnoremap <space>qn :q!<cr>
 
 colo codedark
 
