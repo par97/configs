@@ -10,4 +10,23 @@
 
 -- vim.keymap.del( {"n"}, "r", {})
 -- can not delete key r, so remap it to null
-vim.keymap.set("n", "r", "", {noremap = true})
+-- vim.keymap.set("n", "r", "", {noremap = true})
+
+-- set by jacklu
+vim.keymap.set("n", "<leader>qw", ":w<cr>", { desc = "save" })
+vim.keymap.set("n", "<leader>qe", ":wq<cr>", { desc = "save and quit" })
+vim.keymap.set("n", "<leader>qq", ":qa<cr>", { desc = "quit all" })
+vim.keymap.set("n", "<leader>qn", ":q!<cr>", { desc = "quit no save" })
+
+vim.keymap.set("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
+vim.keymap.set("n", "<leader>lx", "<cmd>LazyExtras<cr>", { desc = "LazyExtras" })
+
+-- vim.cmd("map! <C-Q> <S-Left>")
+-- vim.cmd("map  <C-Q> <S-Left>")
+-- vim.cmd("map! <C-W> <S-Right>")
+-- vim.cmd("map  <C-W> <S-Right>")
+
+vim.cmd("map! <C-A> <Home>")
+vim.cmd("map  <C-A> <Home>")
+vim.cmd("map! <C-E> <End>")
+vim.cmd("map  <C-E> <End>")
