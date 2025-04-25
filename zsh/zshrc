@@ -13,6 +13,8 @@ alias xcat='xargs cat'
 
 bindkey "^J" backward-kill-line
 bindkey "^]" redo
+bindkey "^B" backward-word
+bindkey "^F" forward-word
 
 #export GOPRIVATE="github.ibm.com/*"
 #export GITHUB_TOKEN=xxxxxx
