@@ -10,6 +10,7 @@ alias c='column -t'
 alias gv='grep -E -v "^#|^$"'
 alias gvc='grep -E -v "^#|^$" | ccat'
 alias xcat='xargs cat'
+alias wa='watch '
 
 bindkey "^J" backward-kill-line
 bindkey "^]" redo
